@@ -23,12 +23,22 @@ import java.util.Map;
 
 /**
  * Created by nowcoder on 2018/7/14.
-   专门的消费者，取出队列中的数据，取出来以后，反序列化为当时的线程。找到对应的handler，处理掉
- 、事件的消费者，把事件处理掉 把各种handler管理好
+ EventConsumer：消费活动，得到某个活动实体，如何将活动分发下去给相关的所有handle实现。
+     package org.springframework.context;ApplicationContext
+   专门的消费者，取出队列中的数据，取出来以后，反序列化为当时的线程。
+   找到对应的handler，处理掉把各种handler管理好
  初始化 logger日志  把event做成一个路由表（找到实现接口的可以记录下ApplicationContext）
  当一个类实现了这个接口（ApplicationContextAware）之后，这个类就可以方便获得ApplicationContext中的所有bean。
  换句话说，就是这个类可以直接获取spring配置文件中，所有有引用到的bean对象
+
+ 消费活动，在初始化前，先得到Handler接口所有的实现类，遍历实现类。
+ 通过getSupportEventType得到每个实现类对应处理的活动类型。反过来记录在config哈希表中，
+ config中的key是活动的类型，比如说是LIKE，COMMENT，是枚举里的成员，value是一个ArrayList的数组，
+ 里面存放的是各种实现方法。见代码中的。当从队列中获得一个活动时，这里用的是从右向外pop()一个活动实体。
+ 进行解析。这里的config.get(eventModel.getType())是一个数组，
+ 里面存放着所有关于这个活动要执行的实现类。遍历这个数组，开始执行实现类里的方法。
  */
+
 @Service
 public class EventConsumer implements InitializingBean, ApplicationContextAware {
     private static final Logger logger = LoggerFactory.getLogger(EventConsumer.class);
