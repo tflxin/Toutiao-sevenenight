@@ -109,7 +109,15 @@ public class EventConsumer implements InitializingBean, ApplicationContextAware 
     }
 }
 
-
+/**
+ * 总结：
+ * 一、在controller中执行like喜欢动作的时候，会有一个EventModel模型，记录当下事件的所有信息，json序列化，存入redis缓存中。EventModel相关的属性有，活动类型EventType，触发者，出发对象id，触发对象类型，触发对象拥有者，触发现场有哪些信息要保存map。
+ * 二、后台一直有一个线程在消费给队列。如何实现呢，考虑到拓展性，首先会定义一个service层的接口，EventHandler，定义其中的方法doHandler要做的事情和当前event涉及到的所有活动类型EventType。
+ * 三、实现EventHandler接口，如有点赞活动，我点赞后，需要执行什么，有LikeHandler实现EventHandler接口，在doHandler中写具体要执行的方法，比如点赞后在后台可以发消息给用户。点赞相关的活动只有点赞。复杂一点的活动会涉及好几个活动类型。
+ *
+ * 四、最重要的是EventConsumer，实现了InitializingBean, ApplicationContextAware接口，ApplicationContextAware可以获得当前的applicationContext，之后是InitializingBean接口中的afterPropertiesSet方法，在里面配置好config。
+ * 首先拿到所有实现EventHandler接口的所有类。下面起一个线程从队列中消费。
+ */
 
 
 
