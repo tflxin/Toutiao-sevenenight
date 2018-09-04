@@ -24,7 +24,7 @@ import java.util.Properties;
 
 /**
  * Created by nowcoder on 2018/7/15. // course@nowcoder.com NKnk66
- 发送邮件，利用包装好的接口
+ 发送邮件的工具类，利用包装好的接口
  JavaMailSenderImpl； VelocityEngine；
  package org.apache.velocity.app;
  package org.springframework.mail.javamail;
