@@ -6,7 +6,9 @@ import java.util.Map;
 
 /**
  * Created by nowcoder on 2018/7/14.
- EnventModel表示当时发生的事件的一些数据信息，都打包在enventModel里面
+ EnventModel活动模型，进入队列的具体活动
+      EnventType; actorId; entityId;entityType;entityOwnerId；exts
+ 表示当时发生的事件的一些数据信息，都打包在enventModel里面
  */
 public class EventModel {
    //发生了什么事情
@@ -16,7 +18,7 @@ public class EventModel {
     private int entityType;
     //对象拥有者
     private int entityOwnerId;
-   //通过map表示带带触发的线程的东西
+   //通过map表示待触发的线程的东西
     private Map<String, String> exts = new HashMap<>();
 
     public Map<String, String> getExts() {
