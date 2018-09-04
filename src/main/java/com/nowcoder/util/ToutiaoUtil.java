@@ -10,6 +10,7 @@ import java.util.Map;
 
 /**
  * Created by nowcoder on 2018/7/3.
+ * 设置图片格式:判断是否适合上传的格式
  */
 public class ToutiaoUtil {
     private static final Logger logger = LoggerFactory.getLogger(ToutiaoUtil.class);

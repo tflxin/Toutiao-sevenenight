@@ -16,6 +16,14 @@ import java.util.UUID;
 
 /**
  * Created by nowcoder on 2018/7/7.
+ * 上传图片上传service，利用七牛云
+ * ：利用package com.qiniu.storage;
+ * "http://7xsetu.com1.z0.glb.clouddn.com/"
+ * package org.springframework.web.multipart;
+ *
+ *
+ *
+ *
  */
 @Service
 public class QiniuService {
