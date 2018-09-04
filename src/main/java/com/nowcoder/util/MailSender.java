@@ -24,6 +24,17 @@ import java.util.Properties;
 
 /**
  * Created by nowcoder on 2018/7/15. // course@nowcoder.com NKnk66
+ 发送邮件，利用包装好的接口
+ JavaMailSenderImpl； VelocityEngine；
+ package org.apache.velocity.app;
+ package org.springframework.mail.javamail;
+ 先把这些参数序列化，发送到队列中借助于MimeMessageHelper
+ 把参数从controller发送过来，经过摸版对数据进行处理，渲染得到的是一个个性化的模板
+
+ //发邮件之前对邮件信息进行处理afterPropertiesSet()： JavaMailSenderImpl
+
+
+
  */
 @Service
 public class MailSender implements InitializingBean {
