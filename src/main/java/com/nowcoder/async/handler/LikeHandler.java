@@ -16,8 +16,9 @@ import java.util.List;
 
 /**
  * Created by nowcoder on 2018/7/14.
- * LikeHandler 继承EventHandler 具体的实现类：点赞后要执行的行为
- *            给别人发提醒。
+ * LikeHandler 继承EventHandler 具体的实现类：
+ *         点赞后要执行的行为 ，给别人发提醒。
+ *
  *
  *
  1、@controller 控制器（注入服务）
