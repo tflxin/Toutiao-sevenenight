@@ -16,7 +16,8 @@ import java.util.*;
 
 /**
  * Created by nowcoder on 2018/7/14.
- 登录异常的处理:关注登陆的
+    LoginExceptionHandler
+    登录异常的处理:关注登陆的
  */
 @Component
 public class LoginExceptionHandler implements EventHandler{
