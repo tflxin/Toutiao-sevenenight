@@ -3,6 +3,8 @@ package com.nowcoder.util;
 /**
  * Created by nowcoder on 2018/7/13.
  *RedisKeyUtil： BIZ：消费者模式触发事件的人儿
+ *  getLikeKey
+ *  getDisLikeKey
  */
 public class RedisKeyUtil {
     private static String SPLIT = ":";

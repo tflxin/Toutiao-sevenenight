@@ -15,7 +15,10 @@ import java.util.List;
 
 /**
  * Created by nowcoder on 2018/7/13.
- 专门用来演示redis的操作，包装起来后使用
+ JedisAdapter  专门用来演示redis的操作，包装起来后使用
+ afterPropertiesSet()
+ package redis.clients.jedis;
+
  */
 
 @Service
@@ -249,7 +252,7 @@ public class JedisAdapter implements InitializingBean {
             }
         }
     }
-    //看集合有多哦少人
+    //看集合有多哦人
     public long scard(String key) {
         Jedis jedis = null;
         try {
