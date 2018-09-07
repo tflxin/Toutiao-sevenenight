@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * Created by nowcoder on 2018/7/13.
- JedisAdapter  专门用来演示redis的操作，包装起来后使用
+ JedisAdapter  专门用来演示redis的操作，包装起来后使用：适配器模式吧
  afterPropertiesSet()
  package redis.clients.jedis;
 
