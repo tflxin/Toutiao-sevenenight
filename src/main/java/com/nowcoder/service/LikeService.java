@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 /**
  * Created by nowcoder on 2018/7/13.
- 某个用户对某个东西是否喜欢
+ 判断getLikedStatue，like，dislike，对集合进行改变
+ 点赞点踩不同的人，就放到不同的集合里面，但是要显示这个页面的时候呢，就可以直接去集合里面对应的数字显示出来
+
  */
 @Service
 public class LikeService {
